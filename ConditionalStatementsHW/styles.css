@@ -4,10 +4,6 @@ input {
 	padding-right: 3px;
 }
 
-#rect-width, #rect-height {
-	display: inline-block;
-}
-
 span {
 	font-size: 20px;
 	text-decoration: underline;
