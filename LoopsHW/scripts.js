@@ -61,7 +61,7 @@ function problem3() {
 		i,
 		len;
 
-	if (arr === '') {
+	if (input === '') {
 		validInput = false;
 	} else {
 		arr = input.split(', ').map(Number);
