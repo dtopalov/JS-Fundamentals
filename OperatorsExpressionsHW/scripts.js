@@ -146,10 +146,11 @@ function problem7() {
     var isPrime = true;
 
     if (!isNaN(problem7Input) && problem7Input % 1 === 0 && problem7Input !== '') {
+        problem7Input *= 1;
         if (problem7Input < 2) {
             isPrime = false;
         } else {
-            for (var i = 2, sqrt = Math.floor(Math.sqrt(problem7Input)); i < sqrt; i += 1) {
+            for (var i = 2; i <= Math.floor(Math.sqrt(problem7Input)); i += 1) {
                 if (problem7Input % i === 0) {
                     isPrime = false;
                     break;
@@ -160,6 +161,7 @@ function problem7() {
         document.getElementById('pr7answer').innerHTML =
             problem7Input + ' is prime? --> ' + isPrime;
         console.log('Problem 7: ' + problem7Input + ' is prime? --> ' + isPrime);
+        isPrime = false;
     } else {
         console.log('Input is not an integer');
     }
