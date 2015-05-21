@@ -163,7 +163,7 @@ function problem7() {
         console.log('Problem 7: ' + problem7Input + ' is prime? --> ' + isPrime);
         isPrime = false;
     } else {
-        console.log('Input is not an integer');
+        document.getElementById('pr7answer').innerHTML = 'Input is not an integer';
     }
 
     document.getElementById('problem7').value = '';
