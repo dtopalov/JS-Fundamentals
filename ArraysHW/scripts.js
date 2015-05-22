@@ -63,7 +63,7 @@ function problem2() {
 
 function problem3() {
     var input = document.getElementById('array3').value,
-        validInput = true,
+        validInput = validateInput(input),
         max = 1,
         currentMax = 1,
         maxEndIndex = 0,
@@ -72,19 +72,9 @@ function problem3() {
         len,
         maxSequence;
 
-    if (input === '') {
-        validInput = false;
-    } else {
-        arr = input.split(', ').map(Number);
-        for (i = 0, len = arr.length; i < len; i += 1) {
-            if (isNaN(arr[i])) {
-                validInput = false;
-                break;
-            }
-        }
-    }
-
     if (validInput) {
+        arr = input.split(', ').map(Number);
+
         for (i = 1, len = arr.length; i < len; i += 1) {
             if (arr[i] === arr[i - 1]) {
                 currentMax += 1;
@@ -111,7 +101,7 @@ function problem3() {
 
 function problem4() {
     var input = document.getElementById('array4').value,
-        validInput = true,
+        validInput = validateInput(input),
         max = 1,
         currentMax = 1,
         maxEndIndex = 0,
@@ -120,19 +110,8 @@ function problem4() {
         len,
         maxSequence;
 
-    if (input === '') {
-        validInput = false;
-    } else {
-        arr = input.split(', ').map(Number);
-        for (i = 0, len = arr.length; i < len; i += 1) {
-            if (isNaN(arr[i])) {
-                validInput = false;
-                break;
-            }
-        }
-    }
-
     if (validInput) {
+        arr = input.split(', ').map(Number);
         for (i = 1, len = arr.length; i < len; i += 1) {
             if (arr[i] > arr[i - 1]) {
                 currentMax += 1;
@@ -159,7 +138,7 @@ function problem4() {
 
 function problem5() {
     var input = document.getElementById('array5').value,
-        validInput = true,
+        validInput = validateInput(input),
         temp,
         arr,
         i,
@@ -168,19 +147,8 @@ function problem5() {
         len,
         result;
 
-    if (input === '') {
-        validInput = false;
-    } else {
-        arr = input.split(', ').map(Number);
-        for (i = 0, len = arr.length; i < len; i += 1) {
-            if (isNaN(arr[i])) {
-                validInput = false;
-                break;
-            }
-        }
-    }
-
     if (validInput) {
+        arr = input.split(', ').map(Number);
         result = 'Initial array: ' + arr.join(', ');
 
         for (i = 0, len = arr.length; i < len; i += 1) {
@@ -207,7 +175,7 @@ function problem5() {
 
 function problem6() {
     var input = document.getElementById('array6').value,
-        validInput = true,
+        validInput = validateInput(input),
         mostFrequent,
         current,
         mostFrequentCount = 0,
@@ -218,19 +186,8 @@ function problem6() {
         len,
         result;
 
-    if (input === '') {
-        validInput = false;
-    } else {
-        arr = input.split(', ').map(Number);
-        for (i = 0, len = arr.length; i < len; i += 1) {
-            if (isNaN(arr[i])) {
-                validInput = false;
-                break;
-            }
-        }
-    }
     if (validInput) {
-
+        arr = input.split(', ').map(Number);
         for (i = 0, len = arr.length; i < len; i += 1) {
             current = arr[i];
             currentCount = 0;
@@ -261,7 +218,7 @@ function problem6() {
 function problem7() {
     var input = document.getElementById('array7').value,
         number = document.getElementById('number7').value,
-        validInput = true,
+        validInput = validateInput(input),
         arr,
         i,
         indexOf,
@@ -269,6 +226,42 @@ function problem7() {
         len,
         result;
 
+    if (validInput && number !== '' && !isNaN(number)) {
+        arr = input.split(', ').map(Number);
+        arr.sort(function(a, b) {
+            return a - b;
+        });
+        number *= 1;
+        indexOf = binSearch(arr, number, 0, arr.length - 1);
+        result = 'The index of ' + number + ' is (-1 if not found): ' +
+            indexOf;
+        document.getElementById('pr7answer').innerHTML = result;
+        console.log('Problem 7: ' + result);
+    } else {
+        document.getElementById('pr7answer').innerHTML = 'Invalid input';
+    }
+    document.getElementById('array7').value = '';
+    document.getElementById('number7').value = '';
+
+    function binSearch(array, number, start, end) {
+        if (array[start] > number || number > array[end]) {
+            return (-1);
+        }
+        var middle = ((end + start) / 2) | 0;
+        if (array[middle] === number) {
+            return middle;
+        } else {
+            if (array[middle] > number) {
+                return binSearch(array, number, start, (middle - 1));
+            } else {
+                return binSearch(array, number, (middle + 1), end);
+            }
+        }
+    }
+}
+
+function validateInput(input) {
+    var validInput = true;
     if (input === '') {
         validInput = false;
     } else {
@@ -280,42 +273,5 @@ function problem7() {
             }
         }
     }
-
-    if (validInput && number !== '' && !isNaN(number)) {
-        arr.sort(function(a, b) {
-            return a - b;
-        });
-        number *= 1;
-        indexOf = binSearch(arr, number, (arr.length / 2) | 0);
-        result = 'The index of ' + number + ' is (-1 if not found): ' +
-            indexOf;
-        document.getElementById('pr7answer').innerHTML = result;
-        console.log('Problem 7: ' + result);
-    } else {
-        document.getElementById('pr7answer').innerHTML = 'Invalid input';
-    }
-    document.getElementById('array7').value = '';
-
-    function binSearch(array, number, index) {
-    	var arrNext;
-        if (array[0] > number || number > array[array.length - 1] ||
-            (array.length === 1 && array[0] !== number)) {
-            return (-1);
-        }
-        var middle = (array.length / 2) | 0;
-
-        if (array[middle] === number) {
-            return index;
-        } else {
-            if (array[middle] > number) {
-                arrNext = array.slice(0, middle);
-                index -= Math.ceil(arrNext.length / 2);
-                return binSearch(arrNext, number, index);
-            } else {
-                arrNext = array.slice(middle, array.length);
-                index += (arrNext.length / 2) | 0;
-                return binSearch(arrNext, number, index);
-            }
-        }
-    }
+    return validInput;
 }
