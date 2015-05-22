@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Homework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <span class="title">Problem 1. English digit</span>
+    <label for="number1">Enter an integer</label>
+    <input id="number1" placeholder="Enter an integer" />
+    <button onclick="problem1()">Print digit name</button>
+    <div id="pr1answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 2. Reverse number</span>
+    <label for="number2">Enter a number</label>
+    <input id="number2" placeholder="Enter a number" />
+    <button onclick="problem2()">Reverse number</button>
+    <div id="pr2answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 3. Occurrences of word</span>
+    <label for="word">Search for a word in the text:</label>
+    <input id="word" placeholder="Search" />
+    <input id="submit" type="button" value="Search" onclick="problem3()" />
+    <label for="check">Check for case sensitive search:</label>
+    <input id="check" type="checkbox" />
+    <div id="notice"></div>
+    <div id="text">
+        <h2>In This Chapter</h2>
+        <p>In this chapter we will take a look at the basic programming terminology and we will write our first C# program. We will familiarize ourselves with programming – what it means and its connection to computers and programming languages.</p>
+        <p>Briefly, we will review the different stages of software development.</p>
+        <p>We will introduce the C# language, the .NET platform and the different Microsoft technologies used in software development. We will examine what tools we need to program in C#. We will use the C# language to write our first computer program, compile and run it from the command line as well as from Microsoft Visual Studio integrated development environment. We will review the MSDN Library – the documentation of the .NET Framework. It will help us with our exploration of the features of the platform and the language.</p>
+        <h2>What Does It Mean "To Program"?</h2>
+        <p>Nowadays computers have become irreplaceable. We use them to solve complex problems at the workplace, look for driving directions, have fun and communicate. They have countless applications in the business world, the entertainment industry, telecommunications and finance. It’s not an over­statement to say that computers build the neural system of our contemporary society and it is difficult to imagine its existence without them.</p>
+        <p>Despite the fact that computers are so wide-spread, few people know how they really work. In reality, it is not the computers, but the programs (the software), which run on them, that matter. It is the software that makes computers valuable to the end-user, allowing for many different types of services that change our lives.</p>
+        <h2>How Do Computers Process Information?</h2>
+        <p>In order to understand what it means to program, we can roughly compare a computer and its operating system to a large factory with all its workshops, warehouses and transportation. This rough comparison makes it easier to imagine the level of complexity present in a contemporary computer. There are many processes running on a computer, and they represent the workshops and production lines in a factory. The hard drive, along with the files on it, and the operating memory (RAM) represent the warehouses, and the different protocols are the transportation systems, which provide the input and output of information.</p>
+        <p>The different types of products made in a factory come from different workshops. They use raw materials from the warehouses and store the completed goods back in them. The raw materials are transported to the warehouses by the suppliers and the completed product is transported from the warehouses to the outlets. To accomplish this, different types of transportation are used. Raw materials enter the factory, go through different stages of processing and leave the factory transformed into products. Each factory converts the raw materials into a product ready for consumption.</p>
+    </div>
+    <div id="note">
+        <p>// The same function is called w/ 3 arguments (strings for text and searched word and true for case sensitive) if the checkbox is checked, and with 2 if not.</p>
+    </div>
+    <hr />
+
+    <span class="title">Problem 4. Number of elements</span>
+    <input type="button" value="Add DIVs" onclick="addDiv()" />
+    <input type="button" value="Count DIVs" onclick="divCount()" />
+    <input type="button" value="Reset new DIVs" onclick="resetDiv()" />
+    <div>
+        <p id="count"></p>
+    </div>
+    <div id="newDivs"></div>
+    <hr />
+
+    <span class="title">Problem 5. Appearance count</span>
+    <label for="array1">Enter a sequence of numbers, separated by a comma and a space (, )</label>
+    <input id="array1" class="array" placeholder="Ex.: 5, 2, 8..." value="1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5" /> (You can enter another array in the same format)
+    <br />
+    <label for="number5">Enter a number</label>
+    <input id="number5" placeholder="Enter a number" />
+    <button onclick="problem5()">Count</button>
+    <div id="pr5answer">Answer will appear here and in the console</div>
+    <br />
+    <div id="pr5test">Results from the function testing</div>
+    <hr />
+
+    <span class="title">Problem 6. Larger than neighbours</span>
+    <label for="array2">Enter a sequence of numbers, separated by a comma and a space (, )</label>
+    <input id="array2" class="array" placeholder="Ex.: 5, 2, 8..." value="12, 2, -1, 3, 1, 8, 4, 1, -2, 11, 7, 5" /> (You can enter another array in the same format)
+    <br />
+    <label for="number6">Enter index to check</label>
+    <input id="number6" placeholder="Enter index" />
+    <button onclick="problem6()">Check</button>
+    <div id="pr6answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 7. First larger than neighbours</span>
+    <label for="array3">Enter a sequence of numbers, separated by a comma and a space (, )</label>
+    <input id="array3" class="array" placeholder="Ex.: 5, 2, 8..." value="12, 2, -1, 3, 1, 8, 4, 1, -2, 11, 7, 5" /> (You can enter another array in the same format)
+    <button onclick="problem7()">Check</button>
+    <div id="pr7answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <script src='scripts.js'></script>
+</body>
+
+</html>
