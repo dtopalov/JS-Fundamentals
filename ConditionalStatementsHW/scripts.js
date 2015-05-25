@@ -303,7 +303,6 @@ function problem7() {
 function problem8() {
     var number = document.getElementById('first-number8').value,
         result;
-
     if (!isNaN(number) && number !== '' &&
         number * 1 >= 0 && number * 1 <= 999 &&
         ((number * 1) % 1 === 0)) {
@@ -380,6 +379,7 @@ function problem8() {
         }
         if (tens == 1 && digits > 0) {
             result = hundreds + special;
+            result = result.charAt(0).toUpperCase() + result.substring(1);
             hundreds = tens = digits = "";
             document.getElementById('pr8answer').innerHTML =
                 result;
@@ -465,6 +465,7 @@ function problem8() {
         }
 
         result = hundreds + tens + digits;
+        result = result.charAt(0).toUpperCase() + result.substring(1);
         document.getElementById('pr8answer').innerHTML =
             result;
         console.log('Problem 8: ' + result);
