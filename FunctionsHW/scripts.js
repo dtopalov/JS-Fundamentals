@@ -51,10 +51,14 @@ function problem1() {
 // Problem 2:
 
 function problem2() {
-    var input = document.getElementById('number2').value;
+    var input = document.getElementById('number2').value,
+        result = '',
+        i;
     if (input !== '' && !isNaN(input)) {
-        var result = '',
-            i;
+        if (input < 0) {
+            input = (-input).toString();
+            result += '-';
+        }
         for (i = input.length - 1; i >= 0; i -= 1) {
             result += input[i];
         }
