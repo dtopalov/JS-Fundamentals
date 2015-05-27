@@ -4,20 +4,30 @@ function problem1() {
     var number = document.getElementById('number1').value,
         i;
 
-    if (!isNaN(number) && number !== '' && number > 0) {
+    if (!isNaN(number) && number !== '' && !(number % 1)) {
         number *= 1;
         document.getElementById('pr1answer').innerHTML = '';
         console.log('Problem 1: All integers from 1 to ' + number);
-        for (i = 1; i <= number; i += 1) {
-            document.getElementById('pr1answer').innerHTML += i;
-            console.log(i);
-            if (i <= number - 1) {
-                document.getElementById('pr1answer').innerHTML += ', ';
+        if (number >= 1) {
+            for (i = 1; i <= number; i += 1) {
+                document.getElementById('pr1answer').innerHTML += i;
+                console.log(i);
+                if (i <= number - 1) {
+                    document.getElementById('pr1answer').innerHTML += ', ';
+                }
+            }
+        } else {
+            for (i = 1; i >= number; i -= 1) {
+                document.getElementById('pr1answer').innerHTML += i;
+                console.log(i);
+                if (i > number) {
+                    document.getElementById('pr1answer').innerHTML += ', ';
+                }
             }
         }
     } else {
         document.getElementById('pr1answer').innerHTML =
-            'Incorrect input. Enter a positive integer.';
+            'Incorrect input. Enter an integer.';
     }
 
     document.getElementById('number1').value = '';
@@ -29,22 +39,35 @@ function problem2() {
     var number = document.getElementById('number2').value,
         i;
 
-    if (!isNaN(number) && number !== '' && number > 0) {
+    if (!isNaN(number) && number !== '' && !(number % 1)) {
         number *= 1;
         document.getElementById('pr2answer').innerHTML = '';
         console.log('Problem 2: All integers from 1 to ' + number + ', not divisible by 3 and 7');
-        for (i = 1; i <= number; i += 1) {
-            if (i % 3 !== 0 || i % 7 !== 0) {
-                document.getElementById('pr2answer').innerHTML += i;
-                console.log(i);
-                if (i <= number - 1) {
-                    document.getElementById('pr2answer').innerHTML += ', ';
+
+        if (number >= 1) {
+            for (i = 1; i <= number; i += 1) {
+                if (!(!(i % 3) && !(i % 7))) {
+                    document.getElementById('pr2answer').innerHTML += i;
+                    console.log(i);
+                    if (i <= number - 1) {
+                        document.getElementById('pr2answer').innerHTML += ', ';
+                    }
+                }
+            }
+        } else {
+            for (i = 1; i >= number; i -= 1) {
+                if (!(!(i % 3) && !(i % 7))) {
+                    document.getElementById('pr2answer').innerHTML += i;
+                    console.log(i);
+                    if (i > number) {
+                        document.getElementById('pr2answer').innerHTML += ', ';
+                    }
                 }
             }
         }
     } else {
         document.getElementById('pr2answer').innerHTML =
-            'Incorrect input. Enter a positive integer.';
+            'Incorrect input. Enter an integer.';
     }
 
     document.getElementById('number2').value = '';
