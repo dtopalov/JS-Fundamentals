@@ -1,0 +1,25 @@
+input {
+    text-align: right;
+    width: 100px;
+    padding-right: 3px;
+}
+
+.array {
+    width: 200px;
+}
+
+span:not(.title) {
+    background: yellow;
+    font-size: 1em;
+    text-decoration: underline;
+    display: inline;
+    color: black;
+}
+
+span.title {
+    font-size: 20px;
+    text-decoration: underline;
+    color: red;
+    display: block;
+    margin-bottom: 5px;
+}

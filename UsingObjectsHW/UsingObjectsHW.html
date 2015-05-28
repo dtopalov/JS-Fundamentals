@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Using Objects Homework</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <span class="title">Problem 1. Planar coordinates</span>
+    <p>Enter point coordinates for segment 1:</p>
+    <label for="x1">Enter X of P1</label>
+    <input id="x1" value="0" placeholder="Enter a number" />
+    <label for="y1">Enter Y of P1</label>
+    <input id="y1" value="0" placeholder="Enter a number" />
+    <br />
+    <label for="x2">Enter X of P2</label>
+    <input id="x2" value="4" placeholder="Enter a number" />
+    <label for="y2">Enter Y of P2</label>
+    <input id="y2" value="0" placeholder="Enter a number" />
+    <p id="segment1">Segment 1:</p>
+    <p>Enter point coordinates for segment 2:</p>
+    <label for="x3">Enter X of P3</label>
+    <input id="x3" value="4" placeholder="Enter a number" />
+    <label for="y3">Enter Y of P3</label>
+    <input id="y3" value="0" placeholder="Enter a number" />
+    <br />
+    <label for="x4">Enter X of P4</label>
+    <input id="x4" value="4" placeholder="Enter a number" />
+    <label for="y4">Enter Y of P4</label>
+    <input id="y4" value="3" placeholder="Enter a number" />
+    <p id="segment2">Segment 2:</p>
+    <p>Enter point coordinates for segment 3:</p>
+    <label for="x5">Enter X of P5</label>
+    <input id="x5" value="4" placeholder="Enter a number" />
+    <label for="y5">Enter Y of P5</label>
+    <input id="y5" value="3" placeholder="Enter a number" />
+    <br />
+    <label for="x6">Enter X of P6</label>
+    <input id="x6" value="0" placeholder="Enter a number" />
+    <label for="y6">Enter Y of P6</label>
+    <input id="y6" value="0" placeholder="Enter a number" />
+    <p id="segment3">Segment 3:</p>
+    <button onclick="problem1()">Create points</button>
+    <div id="pr1answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 2. Remove elements</span>
+    <label for="arr1">Enter an array of elements, separated by a comma (',')</label>
+    <input id="arr1" class="array" value="1,2,1,4,1,3,4,1,111,3,2,1,'1'" placeholder="Enter an array" />
+    <label for="element1">Enter an element to remove</label>
+    <input id="element1" value="1" placeholder="Enter an element" />
+    <button onclick="problem2()">Remove element</button>
+    <div id="pr2answer">Result will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 3. Deep copy</span>
+    <p>var obj = {
+        <br />stringProperty: 'this is a string',
+        <br />numberProperty: 5,
+        <br />arrayProperty: [1,2,3,4,5],
+        <br />objectProperty: {a: 5, b: 7, c: [1,2,3]}
+        <br />}
+    </p>
+    <button onclick="problem3()">Create deep copy</button>
+    <div id="pr3answer">Result will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 4. Has property</span>
+    <p>var obj = {
+        <br />stringProperty: 'this is a string',
+        <br />numberProperty: 5,
+        <br />arrayProperty: [1,2,3,4,5],
+        <br />objectProperty: {a: 5, b: 7, c: [1,2,3]}
+        <br />}
+    </p>
+    <label for="property">Enter a property to look for</label>
+    <input id="property" placeholder="Enter a property" />
+    <button onclick="problem4()">Check property</button>
+    <div id="pr4answer">Result will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 5. Youngest person</span>
+    <p id="people5"></p>
+    <button onclick="generatePeople(5, problem5)">Generate people</button>
+    <button id="second-button5">Find youngest</button>
+    <div id="pr5answer">Result will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 6.</span>
+    <p id="people6"></p>
+    <button onclick="generatePeople(6, problem6)">Generate people</button>
+    <button id="second-button6">Group people</button>
+    <div id="pr6answer">Result will appear here and in the console</div>
+    <hr />
+</body>
+
+</html>
