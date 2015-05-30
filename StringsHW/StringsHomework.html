@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strings Homework</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <span class="title">Problem 1. Reverse string</span>
+    <label for="string1">Enter a string</label>
+    <input id="string1" value="test string" placeholder="Enter a string" />
+    <button onclick="problem1()">Reverse string</button>
+    <div id="pr1answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 2. Correct brackets</span>
+    <label for="string2">Enter an expression</label>
+    <input id="string2" value="((a+b)/5-d)" placeholder="Enter an expression" />
+    <button onclick="problem2()">Check brackets</button>
+    <div id="pr2answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 3. Sub-string in text</span>
+    <label for="string3text">Enter text </label>
+    <textarea id="string3text">We are living in an yellow submarine. We don't have anything else. inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.</textarea>
+    <label for="string3substring">Enter a substring to look for </label>
+    <input id="string3substring" value="in" placeholder="Enter a substring" />
+    <button onclick="problem3()">Find substring</button>
+    <div id="pr3answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 4. Parse tags</span>
+    <label for="string4text">Enter text </label>
+    <textarea id="string4text">We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>ANYTHING</lowcase> else.</textarea>
+    <button onclick="problem4()">Change text</button>
+    <div id="pr4answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 5. nbsp</span>
+    <label for="string5text">Enter text </label>
+    <textarea id="string5text">We are living in an yellow submarine. We don't have anything else. inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.</textarea>
+    <button onclick="problem5()">Replace white space</button>
+    <div id="pr5answer">Answer will appear here and in the console</div>
+    <hr />
+
+    <span class="title">Problem 6. Extract text from HTML</span>
+    <label for="string6text">Enter text </label>
+    <textarea id="string6text">&lt;html&gt;&lt;head&gt;&lt;title&gt;Sample site&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div&gt;text&lt;div&gt;more text&lt;/div&gt;and more...&lt;/div&gt;in body&lt;/body&gt;&lt;/html&gt;
+	</textarea>
+	<button onclick="problem6()">Extract text</button>
+	<div id="pr6answer">Answer will appear here and in the console</div>
+	<hr />
+
+	<span class="title">Problem 7. Parse URL</span>
+    <label for="string7text">Enter text </label>
+    <textarea id="string7text">http://telerikacademy.com/Courses/Courses/Details/239</textarea>
+	<button onclick="problem7()">Parse URL</button>
+	<div id="pr7answer">Answer will appear here and in the console</div>
+	<hr />
+
+	<span class="title">Problem 8. Replace tags</span>
+    <label for="string8text">Enter text </label>
+    <textarea id="string8text">&lt;p&gt;Please visit &lt;a href="http://academy.telerik.com">our site&lt;/a> to choose a training course. Also visit &lt;a href="www.devbg.org">our forum&lt;/a&gt; to discuss the courses.&lt;/p&gt;
+	</textarea>
+	<button onclick="problem8()">Replace tag</button>
+	<textarea id="pr8answer">Answer will appear here and in the console</textarea>
+	<hr />
+
+	<span class="title">Problem 9. Extract e-mails</span>
+    <label for="string9text">Enter text </label>
+    <textarea id="string9text">Some text some@email.com more text a@b.co text text text email@abv.bg email_email@gmail.com bla bla bla. not_a_valid_email@  text  text another@not_valid_email  text  text another_not_valid_email@.com @another_not_valid_email another@not_valid@email.com text text some.valid@email.abv.bg  text  text</textarea>
+	<button onclick="problem9()">Extract emails</button>
+	<div id="pr9answer">Answer will appear here and in the console</div>
+	<hr />
+
+	<span class="title">Problem 10. Find palindromes</span>
+    <label for="string10text">Enter text </label>
+    <textarea id="string10text">We are living in an yellow ABBA submarine. We lamal don't have rotor anything else. inside eve the Anna submarine is very exe tight. So boob we refer are stats drinking all the day. We will move out of it in noon 5 days.</textarea>
+	<button onclick="problem10()">Find palindromes</button>
+	<div id="pr10answer">Answer will appear here and in the console</div>
+	<hr />
+
+	<span class="title">Problem 11. String format</span>
+    <div>Sample texts with placeholders and the corresponding values:<br />
+    	Ex.1: "{0}, {1}!", 'Hello', 'World'<br />
+    	Ex.2: "{0}, {1}, {0} text {2}", 1, 'Pesho','Gosho'<br />
+    	Ex.3: "Array: {0}, Object: {1}, Boolean: {2}", [1,2,3], {a:1, b:2}, true<br /><br />
+		Click the button to see the results of the function format(str) called with the sample arguments 
+    	</div>
+	<button onclick="problem11()">See results</button>
+	<div id="pr11answer">Answer will appear here and in the console</div>
+	<hr />
+
+	<span class="title">Problem 12. Generate list</span>
+	<div data-type="template" id="list-item">
+        <strong>-{name}-</strong>
+        <span>-{age}-</span>
+    </div>
+    <div id="sample">Sample list of people:<br />
+    	[{ name: 'Pesho', age: 25 },<br />{ name: 'Gosho', age: 30 },<br />{ name: 'Vanko', age: 35 },<br />{ name: 'Doncho', age: 40 }];
+
+    	</div>
+    	<div id="pr12div">Press the button to create a list in the given format</div>
+	<button id="pr12" onclick="problem12()">Create list</button>
+	<hr />
+
+</body>
+
+</html>
