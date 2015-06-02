@@ -210,7 +210,7 @@ function problem4() {
 }
 
 function hasProperty(obj, property) {
-    if (obj.hasOwnProperty(property)) {
+    if (property in obj) {
         document.getElementById('pr4answer').innerHTML =
             'The object contains a property ' + property + ' with value ' + obj[property] + '.';
         console.log('Problem 4: The object contains a property ' + property + ' with value ' + obj[property] + '.');
