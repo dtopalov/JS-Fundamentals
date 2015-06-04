@@ -2,7 +2,10 @@
 
 console.log('Problem 1:\n===========================');
 
-var people = createPeople(10);
+var people = createPeople();
+people.forEach(function(item) {
+    console.log(item);
+});
 
 function createPerson(fname, lname, age, gender) {
     return {
@@ -13,16 +16,17 @@ function createPerson(fname, lname, age, gender) {
     };
 }
 
-function createPeople(number) {
+function createPeople() {
     var i,
+        firstNames = ['Asen', 'Angel', 'Boris', 'Georgi', 'Marin', 'Ana', 'Eli', 'Elena', 'Gergana', 'Mariika'],
+        lastNames = ['Ivanov', 'Dimitrov', 'Petrov', 'Georgiev', 'Nikolov', 'Borisova', 'Gigova', 'Atanasova', 'Ivanova', 'Georgieva'],
         arr = [];
-    for (i = 0; i < number; i += 1) {
-        arr[i] = createPerson('Name' + (i + 1), 'Lastname' + (i + 1), (Math.random() * 80) | 0, (Math.random() >= 0.5));
+    for (i = 0; i < 10; i += 1) {
+        arr[i] = createPerson(firstNames[i], lastNames[i], (Math.random() * 80) | 0, (i > 4));
     }
     return arr;
 }
 
-console.log(people);
 console.log('===========================');
 
 // Problem 2
@@ -86,3 +90,19 @@ var youngestMale =
     });
 
 console.log(youngestMale.firstname, youngestMale.lastname);
+console.log('===========================');
+
+// Problem 6
+
+console.log('Problem 6:\n===========================');
+
+var result = people.reduce(function(obj, item) {
+    if (obj[item.firstname[0]]) {
+        obj[item.firstname[0]].push(item);
+    } else {
+        obj[item.firstname[0]] = [item];
+    }
+    return obj;
+}, {});
+
+console.log(result);
