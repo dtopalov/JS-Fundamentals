@@ -1,5 +1,14 @@
 // Problem 1
-
+function problem1() {
+    var result = '';
+    people.forEach(function(item) {
+        for (var prop in item) {
+            result += prop + ': ' + item[prop] + '<br />';
+        }
+        result += '--------------------<br />';
+    });
+    document.getElementById('result').innerHTML = result;
+}
 console.log('Problem 1:\n===========================');
 
 var people = createPeople();
@@ -40,6 +49,11 @@ var ofAgeOnly =
 console.log(ofAgeOnly);
 console.log('===========================');
 
+function problem2() {
+    document.getElementById('result').innerHTML =
+        'Every person is of age (18+)? // ' + ofAgeOnly;
+}
+
 // Problem 3
 
 console.log('Problem 3:\n===========================');
@@ -51,6 +65,27 @@ var underaged =
         console.log(item);
     });
 console.log('===========================');
+
+function problem3() {
+    var result = '',
+        underaged = people.filter(function(item) {
+            return item.age < 18;
+        });
+    if (underaged[0]) {
+        underaged.forEach(function(item) {
+            for (var prop in item) {
+                result += prop + ': ' + item[prop] + '<br />';
+            }
+            result += '--------------------<br />';
+        });
+        document.getElementById('result').innerHTML =
+            'Underaged people:<br />' + result;
+    } else {
+        document.getElementById('result').innerHTML =
+            'No underaged people in the group';
+    }
+
+}
 
 // Problem 4
 
@@ -66,6 +101,11 @@ var femaleSum =
 
 console.log(femaleSum);
 console.log('===========================');
+
+function problem4() {
+    document.getElementById('result').innerHTML =
+        'Average age of the women: ' + femaleSum;
+}
 
 // Problem 5
 
@@ -92,6 +132,12 @@ var youngestMale =
 console.log(youngestMale.firstname, youngestMale.lastname);
 console.log('===========================');
 
+function problem5() {
+    document.getElementById('result').innerHTML =
+        'The youngest male is: ' + youngestMale.firstname +
+        ' ' + youngestMale.lastname + ', age: ' + youngestMale.age;
+}
+
 // Problem 6
 
 console.log('Problem 6:\n===========================');
@@ -106,3 +152,22 @@ var result = people.reduce(function(obj, item) {
 }, {});
 
 console.log(result);
+
+function problem6() {
+    var textresult = '',
+        temp;
+    for (var prop in result) {
+        textresult += prop + ': [<br />';
+        result[prop].forEach(function(item) {
+            textresult += '{';
+            for (var prop2 in item) {
+                textresult += prop2 + ': ' + item[prop2] + ',<br />';
+            }
+            textresult = textresult.substring(0, textresult.length - 7);
+            textresult += '<br />},<br />';
+        });
+        textresult = textresult.substring(0, textresult.length - 7);
+        textresult += '<br />]<br />';
+    }
+    document.getElementById('result').innerHTML = textresult;
+}
